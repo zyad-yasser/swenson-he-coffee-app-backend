@@ -1,0 +1,51 @@
+tags:
+- name: hub
+  description: main hub service API
+
+paths:
+  /hub:
+    get:
+      tags:
+        - hub
+      summary: Health check API
+      responses:
+        200:
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                    description: The user ID.
+                  username:
+                    type: string
+                    description: The user name.
+  /hub/send:
+    post:
+      tags:
+        - contract
+      consumes:
+         - multipart/form-data
+      parameters:
+        - in: formData
+          name: file
+          type: file
+          description: The file to upload.
+      summary: Send contract file to main hub to be destributed to other services
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Error'
+  /hub/contract:
+    get:
+      tags:
+        - contract
+      summary: List all processed contracts in the system
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Error'
