@@ -1,6 +1,6 @@
+import 'dotenv/config';
 import { createServer, onListeningCb, onErrorCb } from './utils/server';
 import { appConfig } from './config';
-import 'dotenv/config';
 import App from './app';
 
 const { port } = appConfig;
