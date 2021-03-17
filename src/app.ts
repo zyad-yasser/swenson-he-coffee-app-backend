@@ -18,6 +18,7 @@ import CoffeeMachineController from './controllers/coffee-machine.controller';
 import { CoffeePodController } from './controllers/coffee-pod.controller';
 import CoffeeMachineRouter from './routes/coffee-machine.router';
 import CoffeePodRouter from './routes/coffee-pod.router';
+import { CoffeePodRepository } from './repositories/coffee-pod.repository';
 
 const { baseUrl, name: appName, version } = appConfig;
 
@@ -76,7 +77,7 @@ class App {
     const database = new DB();
 
     const coffeeMachineRepository = new CoffeeMachineRepository({ database });
-    const coffeePodRepository = new CoffeeMachineRepository({ database });
+    const coffeePodRepository = new CoffeePodRepository({ database });
 
     const coffeeMachineController = new CoffeeMachineController({ coffeeMachineRepository });
     const coffeePodController = new CoffeePodController({ coffeePodRepository });
