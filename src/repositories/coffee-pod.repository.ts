@@ -11,11 +11,11 @@ export class CoffeePodRepository implements IRepository {
   }
 
   public find = () => {
-    return this.database.instance.find('CoffeeMachines');
+    return this.database.instance.find('CoffeePods');
   };
 
   public findWithFilters = (filters: FilterList) => {
-    const collection = 'CoffeeMachines';
+    const collection = 'CoffeePods';
     return this.database.instance.findWithFilters(collection, filters);
   };
 }

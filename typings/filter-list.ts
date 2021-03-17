@@ -1,3 +1,3 @@
 export interface FilterList {
-  [key: string]: string;
+  [key: string]: any;
 };
