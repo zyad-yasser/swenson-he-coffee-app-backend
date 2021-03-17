@@ -1,22 +1,25 @@
-[
-	{
-		"id": 0,
-		"name": "COFFEE_FLAVOR_VANILLA"
-	},
-	{
-		"id": 1,
-		"name": "COFFEE_FLAVOR_CARAMEL"
-	},
-	{
-		"id": 2,
-		"name": "COFFEE_FLAVOR_PSL"
-	},
-    {
-		"id": 3,
-		"name": "COFFEE_FLAVOR_MOCHA"
-	},
-    {
-		"id": 4,
-		"name": "COFFEE_FLAVOR_HAZELNUT"
-	}
-]
+{
+	"name": "coffee_pods_falvors",
+	"data": [
+		{
+			"id": 0,
+			"name": "COFFEE_FLAVOR_VANILLA"
+		},
+		{
+			"id": 1,
+			"name": "COFFEE_FLAVOR_CARAMEL"
+		},
+		{
+			"id": 2,
+			"name": "COFFEE_FLAVOR_PSL"
+		},
+		{
+			"id": 3,
+			"name": "COFFEE_FLAVOR_MOCHA"
+		},
+		{
+			"id": 4,
+			"name": "COFFEE_FLAVOR_HAZELNUT"
+		}
+	]
+}

@@ -37,6 +37,19 @@ class CoffeeMachineController implements IController {
       next(error);
     }
   };
+
+  public listFilters = async (_: Request, res: Response, next: NextFunction) => {
+    try {
+      const coffeeMachinesFiltersList = await this.coffeeMachineRepository.filters();
+
+      res
+        .status(200)
+        .json(coffeeMachinesFiltersList);
+
+    } catch (error) {
+      next(error);
+    }
+  };
 }
 
 export default CoffeeMachineController;

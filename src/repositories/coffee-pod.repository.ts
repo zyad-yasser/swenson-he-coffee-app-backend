@@ -18,4 +18,15 @@ export class CoffeePodRepository implements IRepository {
     const collection = 'CoffeePods';
     return this.database.instance.findWithFilters(collection, filters);
   };
+
+  public filters = () => {
+    const collections = [
+      'CoffeePodsProductTypes',
+      'CoffeePodsFlavors',
+      'CoffeePodsPackSizes',
+    ];
+
+    const collectionsDataPromises = collections.map(collection => this.database.instance.find(collection))
+    return Promise.all(collectionsDataPromises);
+  };
 }

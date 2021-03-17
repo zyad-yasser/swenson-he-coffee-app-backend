@@ -18,4 +18,9 @@ export class CoffeeMachineRepository implements IRepository {
     const collection = 'CoffeeMachines';
     return this.database.instance.findWithFilters(collection, filters);
   };
+
+  public filters = () => {
+    const collection = 'CoffeeMachinesProductTypes';
+    return this.database.instance.find(collection);
+  };
 }

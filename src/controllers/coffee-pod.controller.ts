@@ -37,4 +37,17 @@ export class CoffeePodController implements IController {
       next(error);
     }
   };
+
+  public listFilters = async (_: Request, res: Response, next: NextFunction) => {
+    try {
+      const coffeePodsFiltersList = await this.coffeePodRepository.filters();
+
+      res
+        .status(200)
+        .json(coffeePodsFiltersList);
+
+    } catch (error) {
+      next(error);
+    }
+  };
 }
