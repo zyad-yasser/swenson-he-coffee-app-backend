@@ -25,9 +25,9 @@ class CoffeeMachineController implements IController {
 
   public listWithFilters = async (req: Request, res: Response, next: NextFunction) => {
     try {
-      const { params } = req;
+      const { query } = req;
 
-      const coffeeMachinesList = await this.coffeeMachineRepository.findWithFilters(params);
+      const coffeeMachinesList = await this.coffeeMachineRepository.findWithFilters(query);
 
       res
         .status(200)

@@ -1,49 +1,104 @@
 tags:
-- name: hub
-  description: main hub service API
+- name: coffee-machines
+  description: Coffee machines endpoints
+- name: main
+  description: Main end points
+- name: coffee-pods
+  description: Coffee pods endpoints
 
 paths:
-  /hub:
+  /:
     get:
       tags:
-        - hub
-      summary: Health check API
-      responses:
-        200:
-          description: 'OK'
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  id:
-                    type: integer
-                    description: The user ID.
-                  username:
-                    type: string
-                    description: The user name.
-  /hub/send:
-    post:
-      tags:
-        - contract
-      consumes:
-         - multipart/form-data
-      parameters:
-        - in: formData
-          name: file
-          type: file
-          description: The file to upload.
-      summary: Send contract file to main hub to be destributed to other services
+        - main
+      summary: Index endpoint
       responses:
         200:
           description: 'OK'
         500:
           description: 'Error'
-  /hub/contract:
+  /coffee-machines:
     get:
       tags:
-        - contract
-      summary: List all processed contracts in the system
+        - coffee-machines
+      summary: List all coffee machines
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Error'
+  /coffee-machines/filter:
+    get:
+      tags:
+        - coffee-machines
+      summary: Get coffee machines based on one or more filters
+      parameters:
+        - in: query
+          name: product_type
+          schema:
+            type: integer
+          description: Product type based on Coffee machines product types
+        - in: query
+          name: water_line_compatible
+          schema:
+            type: boolean
+          description: Machine support of waterline
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Error'
+  /coffee-machines/filters:
+    get:
+      tags:
+        - coffee-machines
+      summary: Get coffee machines possible filters with values
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Error'
+  /coffee-pods:
+    get:
+      tags:
+        - coffee-pods
+      summary: List all coffee pods
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Error'
+  /coffee-pods/filter:
+    get:
+      tags:
+        - coffee-pods
+      summary: List coffee pods based on one or more filters
+      parameters:
+        - in: query
+          name: product_type
+          schema:
+            type: integer
+          description: Product type based on Coffee pods product types
+        - in: query
+          name: coffee_flavor
+          schema:
+            type: integer
+          description: Coffee pod flavor based on Coffee pods flavors
+        - in: query
+          name: pack_size
+          schema:
+            type: integer
+          description: Coffee pod pack size based on Coffee pods pack sizes
+      responses:
+        200:
+          description: 'OK'
+        500:
+          description: 'Error'
+  /coffee-pods/filters:
+    get:
+      tags:
+        - coffee-pods
+      summary: List coffee pods possible filters with values
       responses:
         200:
           description: 'OK'
