@@ -1,6 +1,3 @@
-interface Filter {
-  field: string;
-  value: string;
-}
-
-export type FilterList = Filter[];
+export interface FilterList {
+  [key: string]: string;
+};
