@@ -1,12 +1,13 @@
+import { IController } from './../interfaces/controller.interface';
 import { IRepository } from './../interfaces/repository.interface';
 import { NextFunction, Request, Response } from 'express';
 import { ICoffeeMachineControllerDependencies } from '../interfaces/coffee-machine-controller-dependencies.interface';
 
-class CoffeeMachineController {
+class CoffeeMachineController implements IController {
   private coffeeMachineRepository: IRepository;
 
-  constructor({ coffeMachineRepository }: ICoffeeMachineControllerDependencies) {
-    this.coffeeMachineRepository = coffeMachineRepository;
+  constructor({ coffeeMachineRepository }: ICoffeeMachineControllerDependencies) {
+    this.coffeeMachineRepository = coffeeMachineRepository;
   }
 
   public list = async (_: Request, res: Response, next: NextFunction) => {

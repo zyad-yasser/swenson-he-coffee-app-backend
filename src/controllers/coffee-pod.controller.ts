@@ -1,8 +1,9 @@
+import { IController } from './../interfaces/controller.interface';
 import { NextFunction, Request, Response } from 'express';
 import { ICoffeePodControllerDependencies } from '../interfaces/coffee-pod-controller-dependencies.interface';
 import { IRepository } from '../interfaces/repository.interface';
 
-export class CoffeePodController {
+export class CoffeePodController implements IController {
   private coffeePodRepository: IRepository;
 
   constructor({ coffeePodRepository }: ICoffeePodControllerDependencies) {

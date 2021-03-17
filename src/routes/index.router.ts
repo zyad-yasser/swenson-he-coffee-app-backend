@@ -1,18 +1,20 @@
 import { Router } from 'express';
 import IndexController from '../controllers/index.controller';
-import Route from '../interfaces/routes.interface';
+import { IRouterDependencies } from '../interfaces/router-dependencies.interface';
+import { IRouter } from '../interfaces/router.interface';
 
-class IndexRouter implements Route {
+class IndexRouter implements IRouter {
   public router = Router();
-  public indexController = new IndexController();
+  private indexController = new IndexController();
 
-  constructor() {
+  constructor({ coffeeMachineRouter, coffeePodRouter }: IRouterDependencies) {
     this.initializeRoutes();
-    this.initializeSubRoutes();
+    this.initializeSubRoutes({ coffeeMachineRouter, coffeePodRouter });
   }
 
-  private initializeSubRoutes() {
-    /** */
+  private initializeSubRoutes({ coffeeMachineRouter, coffeePodRouter }: IRouterDependencies) {
+    this.router.use('/coffee-machine', coffeeMachineRouter.router);
+    this.router.use('/coffee-pod', coffeePodRouter.router);
   }
 
   private initializeRoutes() {

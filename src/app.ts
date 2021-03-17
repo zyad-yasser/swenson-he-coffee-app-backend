@@ -12,6 +12,12 @@ import { stream } from './utils/logger';
 import IndexRouter from './routes/index.router';
 import rateLimit from 'express-rate-limit';
 import httpLogger from './middlewares/http-log.middleware';
+import DB from './db';
+import { CoffeeMachineRepository } from './repositories/coffee-machine.repository';
+import CoffeeMachineController from './controllers/coffee-machine.controller';
+import { CoffeePodController } from './controllers/coffee-pod.controller';
+import CoffeeMachineRouter from './routes/coffee-machine.router';
+import CoffeePodRouter from './routes/coffee-pod.router';
 
 const { baseUrl, name: appName, version } = appConfig;
 
@@ -24,7 +30,7 @@ class App {
     this.env = process.env.NODE_ENV || 'development';
 
     this.initializeMiddlewares();
-    this.initializeRoutes();
+    this.initializeRoutesWithDependencies();
     this.initializeSwagger();
   }
 
@@ -65,8 +71,21 @@ class App {
     this.initErrorHandling();
   }
 
-  private initializeRoutes() {
-    const indexRouter = new IndexRouter();
+  // TODO: Use IOC container for automatic register app dependencies
+  private initializeRoutesWithDependencies() {
+    const database = new DB();
+
+    const coffeeMachineRepository = new CoffeeMachineRepository({ database });
+    const coffeePodRepository = new CoffeeMachineRepository({ database });
+
+    const coffeeMachineController = new CoffeeMachineController({ coffeeMachineRepository });
+    const coffeePodController = new CoffeePodController({ coffeePodRepository });
+
+    const coffeeMachineRouter = new CoffeeMachineRouter({ coffeeMachineController });
+    const coffeePodRouter = new CoffeePodRouter({ coffeePodController });
+
+    const indexRouter = new IndexRouter({ coffeeMachineRouter, coffeePodRouter });
+
     this.app.use('/', indexRouter.router);
   }
 
