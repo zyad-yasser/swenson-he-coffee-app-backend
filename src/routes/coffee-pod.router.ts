@@ -1,6 +1,8 @@
+import { validateQuery } from './../middlewares/validate-rquery.middleware';
 import { Router } from 'express';
 import { ICoffeePodRouterDependencies } from '../interfaces/coffee-pod-router-dependencies.interface';
 import { IController } from '../interfaces/controller.interface';
+import { coffeePodsFiltersSchema } from '../validation/coffee-pods-filters.schema';
 
 class CoffeePodRouter {
   public router = Router();
@@ -13,7 +15,11 @@ class CoffeePodRouter {
 
   private initializeRoutes() {
     this.router.get('/', this.coffeePodController.list);
-    this.router.get('/filter', this.coffeePodController.listWithFilters);
+    this.router.get(
+      '/filter',
+      validateQuery(coffeePodsFiltersSchema),
+      this.coffeePodController.listWithFilters
+    );
   }
 }
 

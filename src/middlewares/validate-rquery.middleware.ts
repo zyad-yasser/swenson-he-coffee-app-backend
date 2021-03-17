@@ -1,16 +1,18 @@
 import { Schema } from 'joi';
 import { Request, Response, NextFunction } from 'express';
 
-export const validate = (validationSchema: Schema) => (
+export const validateQuery = (validationSchema: Schema) => (
   req: Request,
   res: Response,
   next: NextFunction
 ) => {
-  const { body } = req;
-  const { error } = validationSchema.validate(body, { abortEarly: false });
+  const { query } = req;
+  const { error } = validationSchema.validate(query, { abortEarly: false });
   if (error) {
     const message = error.details[0].message.replace(/\"/g, '');
-    res.status(422).send({ message });
+    res
+      .status(422)
+      .send({ message });
   } else {
     next();
   }

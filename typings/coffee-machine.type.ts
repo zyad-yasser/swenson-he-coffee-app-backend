@@ -1,4 +1,4 @@
-export type ProductTypeId = string;
+export type ProductTypeId = number;
 
 export interface ICoffeeMachine {
   id: string;

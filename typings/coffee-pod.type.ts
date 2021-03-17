@@ -1,6 +1,6 @@
-export type ProductTypeId = string;
-export type PackSizeId = string;
-export type CoffeeFlavorId = string;
+export type ProductTypeId = number;
+export type PackSizeId = number;
+export type CoffeeFlavorId = number;
 
 export interface ICoffeePod {
   id: string;

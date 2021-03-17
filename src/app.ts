@@ -77,7 +77,7 @@ class App {
     this.initErrorHandling();
   }
 
-  // TODO: Use IOC container for automatic register app dependencies
+  // TODO: Use IOC container for automatic register app dependencies and dependancy injection
   private initializeRoutesWithDependencies() {
     const database = new DB();
 
