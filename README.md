@@ -29,7 +29,7 @@ https://lucid.app/lucidchart/08547e7c-3ca8-4b40-b7b0-d10bc6b549ea/view
 
 ### Getting started
 
-#####Project run in development mode
+Project run in development mode
 
 `$ npm install`
 
@@ -37,13 +37,13 @@ https://lucid.app/lucidchart/08547e7c-3ca8-4b40-b7b0-d10bc6b549ea/view
 
 ![](https://i.imgur.com/ZgGxbB7.png)
 
-#####Run testing environment with coverage
+Run testing environment with coverage
 
 `$ npm run test`
 
 ![](https://i.imgur.com/7ngPVEc.png)
 
-#####build the project for production
+build the project for production
 
 `$ npm run build`
 
@@ -314,4 +314,4 @@ https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
 </pre>
 
 ### Who can I talk to ?
-#####zyadyasser6@gmail.com
+zyadyasser6@gmail.com
