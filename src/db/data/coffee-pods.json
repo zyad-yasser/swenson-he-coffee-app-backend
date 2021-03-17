@@ -1,0 +1,184 @@
+[
+	{
+		"id": 0,
+		"product_type": 1,
+		"coffee_flavor": 0,
+		"pack_size": 0,
+		"sku": "CP001"
+	},
+	{
+		"id": 1,
+		"product_type": 1,
+		"coffee_flavor": 0,
+		"pack_size": 0,
+		"sku": "CP003"
+	},
+	{
+		"id": 2,
+		"product_type": 1,
+		"coffee_flavor": 1,
+		"pack_size": 0,
+		"sku": "CP011"
+	},
+	{
+		"id": 3,
+		"product_type": 1,
+		"coffee_flavor": 1,
+		"pack_size": 0,
+		"sku": "CP013"
+	},
+	{
+		"id": 4,
+		"product_type": 1,
+		"coffee_flavor": 2,
+		"pack_size": 0,
+		"sku": "CP021"
+	},
+	{
+		"id": 5,
+		"product_type": 1,
+		"coffee_flavor": 2,
+		"pack_size": 0,
+		"sku": "CP023"
+	},
+	{
+		"id": 6,
+		"product_type": 1,
+		"coffee_flavor": 3,
+		"pack_size": 0,
+		"sku": "CP031"
+	},
+	{
+		"id": 7,
+		"product_type": 1,
+		"coffee_flavor": 3,
+		"pack_size": 0,
+		"sku": "CP033"
+	},
+	{
+		"id": 8,
+		"product_type": 1,
+		"coffee_flavor": 4,
+		"pack_size": 0,
+		"sku": "CP041"
+	},
+	{
+		"id": 9,
+		"product_type": 1,
+		"coffee_flavor": 4,
+		"pack_size": 0,
+		"sku": "CP043"
+	},
+	{
+		"id": 10,
+		"product_type": 0,
+		"coffee_flavor": 0,
+		"pack_size": 0,
+		"sku": "CP101"
+	},
+	{
+		"id": 11,
+		"product_type": 0,
+		"coffee_flavor": 0,
+		"pack_size": 0,
+		"sku": "CP103"
+	},
+	{
+		"id": 12,
+		"product_type": 0,
+		"coffee_flavor": 1,
+		"pack_size": 0,
+		"sku": "CP111"
+	},
+	{
+		"id": 13,
+		"product_type": 0,
+		"coffee_flavor": 1,
+		"pack_size": 0,
+		"sku": "CP113"
+	},
+	{
+		"id": 14,
+		"product_type": 0,
+		"coffee_flavor": 2,
+		"pack_size": 0,
+		"sku": "CP121"
+	},
+	{
+		"id": 15,
+		"product_type": 0,
+		"coffee_flavor": 2,
+		"pack_size": 0,
+		"sku": "CP123"
+	},
+	{
+		"id": 16,
+		"product_type": 0,
+		"coffee_flavor": 3,
+		"pack_size": 0,
+		"sku": "CP131"
+	},
+	{
+		"id": 17,
+		"product_type": 0,
+		"coffee_flavor": 3,
+		"pack_size": 0,
+		"sku": "CP133"
+	},
+	{
+		"id": 18,
+		"product_type": 0,
+		"coffee_flavor": 4,
+		"pack_size": 0,
+		"sku": "CP141"
+	},
+	{
+		"id": 19,
+		"product_type": 0,
+		"coffee_flavor": 4,
+		"pack_size": 0,
+		"sku": "CP143"
+	},
+	{
+		"id": 20,
+		"product_type": 2,
+		"coffee_flavor": 0,
+		"pack_size": 1,
+		"sku": "EP003"
+	},
+	{
+		"id": 21,
+		"product_type": 2,
+		"coffee_flavor": 0,
+		"pack_size": 2,
+		"sku": "EP005"
+	},
+	{
+		"id": 22,
+		"product_type": 2,
+		"coffee_flavor": 0,
+		"pack_size": 3,
+		"sku": "EP007"
+	},
+	{
+		"id": 23,
+		"product_type": 2,
+		"coffee_flavor": 1,
+		"pack_size": 1,
+		"sku": "EP013"
+	},
+	{
+		"id": 24,
+		"product_type": 2,
+		"coffee_flavor": 1,
+		"pack_size": 2,
+		"sku": "EP015"
+	},
+	{
+		"id": 25,
+		"product_type": 2,
+		"coffee_flavor": 1,
+		"pack_size": 3,
+		"sku": "EP017"
+	}
+]

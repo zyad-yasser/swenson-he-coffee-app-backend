@@ -1,0 +1,56 @@
+[
+	{
+		"id": 0,
+		"product_type": 1,
+		"water_line_compatible": false,
+		"sku": "CM001"
+	},
+	{
+		"id": 1,
+		"product_type": 1,
+		"water_line_compatible": false,
+		"sku": "CM002"
+	},
+	{
+		"id": 2,
+		"product_type": 1,
+		"water_line_compatible": true,
+		"sku": "CM003"
+	},
+	{
+		"id": 3,
+		"product_type": 0,
+		"water_line_compatible": false,
+		"sku": "CM101"
+	},
+	{
+		"id": 4,
+		"product_type": 0,
+		"water_line_compatible": true,
+		"sku": "CM102"
+	},
+	{
+		"id": 5,
+		"product_type": 0,
+		"water_line_compatible": true,
+		"sku": "CM103"
+	},
+	{
+		"id": 6,
+		"product_type": 2,
+		"water_line_compatible": false,
+		"sku": "EM001"
+	},
+	{
+		"id": 7,
+		"product_type": 2,
+		"water_line_compatible": false,
+		"sku": "EM002"
+	},
+	{
+		"id": 8,
+		"product_type": 2,
+		"water_line_compatible": true,
+		"sku": "EM003"
+	}
+]

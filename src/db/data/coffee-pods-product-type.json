@@ -1,0 +1,14 @@
+[
+	{
+		"id": 0,
+		"name": "COFFEE_POD_LARGE"
+	},
+	{
+		"id": 1,
+		"name": "COFFEE_POD_SMALL"
+	},
+	{
+		"id": 2,
+		"name": "ESPRESSO_POD"
+	}
+]

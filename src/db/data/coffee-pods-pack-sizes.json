@@ -1,0 +1,22 @@
+[
+	{
+		"id": 0,
+		"name": "1 dozen",
+		"dozen": 12
+	},
+	{
+		"id": 1,
+		"name": "3 dozen",
+		"dozen": 36
+	},
+	{
+		"id": 2,
+		"name": "5 dozen",
+		"dozen": 60
+	},
+    {
+		"id": 3,
+		"name": "7 dozen",
+		"dozen": 84
+	}
+]

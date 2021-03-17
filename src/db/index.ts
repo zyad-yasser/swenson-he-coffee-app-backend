@@ -1,8 +1,12 @@
+import { FilterList } from '../../typings/filter-list';
+import { IDatabaseInstance } from '../interfaces/database-instance.interface';
+import { IDatabase } from '../interfaces/database.interface';
+
 const coffeMachines = require('coffee-machines.json');
 const coffePods = require('coffee-pods.json');
 
-class DB {
-  private db: any;
+class DB implements IDatabase {
+  private db: IDatabaseInstance;
 
   constructor() {
     this.initialize();
@@ -10,14 +14,18 @@ class DB {
 
   private initialize() {
     this.db = {
-      coffeMachines,
-      coffePods,
+      collections: {
+        coffeMachines,
+        coffePods,
+      },
+      async find(collection: string) {
+        return this.instance[collection];
+      },
+      async findWithFilters(collection: string, filterList: FilterList) {
+        return this.instance[collection];
+      },
     };
   }
-
-  // private constructIndex(collection) {
-    /** */
-  // }
 
   public get instance() {
     if (!this.db) {
@@ -26,3 +34,5 @@ class DB {
     return this.db;
   }
 }
+
+export default DB;
