@@ -19,6 +19,8 @@ import { CoffeePodController } from './controllers/coffee-pod.controller';
 import CoffeeMachineRouter from './routes/coffee-machine.router';
 import CoffeePodRouter from './routes/coffee-pod.router';
 import { CoffeePodRepository } from './repositories/coffee-pod.repository';
+import queryParserInt from 'express-query-int';
+import boolParser from 'express-query-boolean';
 
 const { baseUrl, name: appName, version } = appConfig;
 
@@ -69,6 +71,9 @@ class App {
     this.app.use(compression());
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
+    this.app.use(boolParser());
+    this.app.use(queryParserInt());
+ 
     this.initErrorHandling();
   }
 

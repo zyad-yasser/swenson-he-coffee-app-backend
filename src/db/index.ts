@@ -18,15 +18,15 @@ class DB implements IDatabase {
   }
 
   private getSubListWithOneFilter<T>(list: T[], key: string, value: any) {
-    return list.filter(item => item[key] = value);
+    return list.filter(item => item[key] === value);
   }
 
   private devideAndFilter<T>(list: T[], filterList: FilterList) {
-    let filteredList = [];
+    let filteredList = [...list];
 
     for (const key in filterList) {
       const value = filterList[key];
-      filteredList = this.getSubListWithOneFilter(list, key, value);
+      filteredList = this.getSubListWithOneFilter(filteredList, key, value);
     }
 
     return filteredList;
