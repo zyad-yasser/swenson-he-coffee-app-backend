@@ -14,7 +14,7 @@ describe('Smoke test Index', () => {
       const { app } = new App();
       return request(app)
         .get('/')
-        .end((_, res) => {
+        .then((res) => {
           const { body, status } = res;
           const { version: resVersion, message } = body;
           expect(status).toBe(200);
