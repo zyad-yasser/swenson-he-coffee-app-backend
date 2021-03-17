@@ -13,8 +13,8 @@ class IndexRouter implements IRouter {
   }
 
   private initializeSubRoutes({ coffeeMachineRouter, coffeePodRouter }: IRouterDependencies) {
-    this.router.use('/coffee-machine', coffeeMachineRouter.router);
-    this.router.use('/coffee-pod', coffeePodRouter.router);
+    this.router.use('/coffee-machines', coffeeMachineRouter.router);
+    this.router.use('/coffee-pods', coffeePodRouter.router);
   }
 
   private initializeRoutes() {

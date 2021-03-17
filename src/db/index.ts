@@ -1,37 +1,32 @@
 import { FilterList } from '../../typings/filter-list';
 import { IDatabaseInstance } from '../interfaces/database-instance.interface';
 import { IDatabase } from '../interfaces/database.interface';
+import { logger } from '../utils/logger';
 
-const coffeMachines = require('coffee-machines.json');
-const coffePods = require('coffee-pods.json');
+const CoffeeMachines = require('./data/coffee-machines.json');
+const CoffeePods = require('./data/coffee-pods.json');
 
 class DB implements IDatabase {
-  private db: IDatabaseInstance;
+  public instance: IDatabaseInstance;
 
   constructor() {
     this.initialize();
   }
 
   private initialize() {
-    this.db = {
+    this.instance = {
       collections: {
-        coffeMachines,
-        coffePods,
+        CoffeeMachines,
+        CoffeePods,
       },
-      async find(collection: string) {
-        return this.instance[collection];
+      find: async (collection: string) => {
+        return this.instance.collections[collection];
       },
-      async findWithFilters(collection: string, filterList: FilterList) {
-        return this.instance[collection];
+      findWithFilters: async (collection: string, filterList: FilterList) => {
+        return this.instance.collections[collection];
       },
     };
-  }
-
-  public get instance() {
-    if (!this.db) {
-      this.initialize();
-    }
-    return this.db;
+    logger.info(`💽  Database initialized`);
   }
 }
 
